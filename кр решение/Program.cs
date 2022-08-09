@@ -42,37 +42,44 @@ void PrintArray(string[] array)
 
 void CheckArray(string[] array, int length)
 {
-int i = 0;
-string[] NewArray = new string[array.Length];
+    int i = 0;
+    string[] NewArray = new string[array.Length];
 
     while (i < array.Length)
     {
         if (array[i].Length <= length)
         {
-           NewArray[i] = array[i] ;
+            NewArray[i] = array[i];
         }
-    
+
         i++;
     }
-NewArray = NewArray.Where(x => x != null).ToArray();
-PrintArray(NewArray);
+    NewArray = NewArray.Where(x => x != null).ToArray();
+    PrintArray(NewArray);
 }
 
 ushort n;
 Console.WriteLine("Введите количество элементов массива:");
+
 while (!ushort.TryParse(Console.ReadLine(), out n))
 {
     System.Console.WriteLine("Введите корректное значение:");
 }
 
-string[] array = new string[n];
-
-FillArray(array);
-System.Console.WriteLine();
-Console.WriteLine("Массив заданный пользователем:");
-PrintArray(array);
-System.Console.WriteLine();
-System.Console.WriteLine("Массив из строк, длина которых меньше либо равна 3м символам:");
-CheckArray(array, 3);
-System.Console.WriteLine();
+if (n == 0)
+{
+    Console.WriteLine("Задана строка с нулем символов (пустая строка).");
+}
+else
+{
+    string[] array = new string[n];
+    FillArray(array);
+    System.Console.WriteLine();
+    Console.WriteLine("Массив заданный пользователем:");
+    PrintArray(array);
+    System.Console.WriteLine();
+    System.Console.WriteLine("Массив из строк, длина которых меньше либо равна 3м символам:");
+    CheckArray(array, 3);
+    System.Console.WriteLine();
+}
 
