@@ -68,7 +68,7 @@ while (!ushort.TryParse(Console.ReadLine(), out n))
 
 if (n == 0)
 {
-    Console.WriteLine("Задана строка с нулем символов (пустая строка).");
+    Console.WriteLine("Вы задали количество элементов в массиве равное 0, то есть заданный массив не содержит элементов.");
 }
 else
 {
