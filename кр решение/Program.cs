@@ -44,18 +44,25 @@ void CheckArray(string[] array, int length)
 {
     int i = 0;
     string[] NewArray = new string[array.Length];
-
+    int k = 0;
     while (i < array.Length)
     {
         if (array[i].Length <= length)
         {
             NewArray[i] = array[i];
+            k++;
         }
-
         i++;
     }
     NewArray = NewArray.Where(x => x != null).ToArray();
-    PrintArray(NewArray);
+    if (k == 0)
+    {
+        System.Console.WriteLine("[]");
+    }
+    else
+    {
+        PrintArray(NewArray);
+    }
 }
 
 ushort n;
